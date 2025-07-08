@@ -400,11 +400,11 @@ section{
   border: 2px solid var(--main-color);
   border-radius: 3rem;
   gap: 2rem;
-  padding: 5rem 7rem;
+  padding: 5rem 2rem;
   overflow: hidden;
   cursor: pointer;
   box-shadow: 0 0 5px var(--main-color);
-  transition: 0.3s ease
+  transition: 0.3s ease;
 }
 .projeto-card:hover{
   box-shadow: 0 0 25px var(--main-color),
@@ -420,16 +420,7 @@ section{
   font-size: 3rem;
 }
 .projeto-card p {
-  font-size: 1.4rem;
-  line-height: 1.6;
-  max-width: 280px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 7;
-  line-clamp: 4;
-  -webkit-box-orient: vertical;
-  min-height: 9rem;
+  font-size: 1.6rem;
 }
 
 .contato h2{
@@ -472,87 +463,118 @@ section{
   color: var(--text-color);
 }
 .footer-iconTop {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2rem;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none; 
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+.footer-iconTop.show {
+  display: block;
+  opacity: 0.8;
+}
+
+.footer-iconTop:hover {
+  opacity: 1;
+  background-color: #555;
 }
 
 .footer-iconTop a {
-  display: inline-flex;
-  justify-content: center;
+  color: white;
+  font-size: 28px;
+  display: flex;
   align-items: center;
-  padding: 1rem;
-  background: var(--main-color);
-  border-radius: 50%;
-  transition: box-shadow 0.3s;
-}
-
-.footer-iconTop a:hover {
-  box-shadow: 0 0 1rem var(--main-color);
-}
-
-.footer-iconTop a i {
-  font-size: 2.4rem;
-  color: var(--second-bg-color);
+  justify-content: center;
 }
 
 
 
 
 /* Responsividade para tablets/celulares */
-@media(max-width:1285px){
+@media(max-width:991px){
+  header{
+    padding: 2rem 3%;
+  }
+  section{
+    padding: 10rem 3% 2rem;
+  }
+  .timeline-items::before{
+    left: 7px;
+  }
+  .timeline-item:nth-child(odd){
+  padding-right: 0;
+  text-align: left;
+  }
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even){
+    padding-left: 37px;
+  }
+  .timeline-dot{
+    left: 0;
+  }
+  .contato form{
+    flex-direction: column;
+  }
+  .footer{
+    padding:2rem 3% ;
+  }
+}
+
+#menu-icon {
+  font-size: 3.6rem;
+  color: var(--main-color);
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width:768px) {
   #menu-icon{
     display: block;
-  }  
+  }
   .navbar{
     position: absolute;
     top: 100%;
     right: 0;
     width: 50%;
-    padding: 1rem 3rem;
+    padding: 1rem 3%;
     background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(20px);
     border-bottom-left-radius: 2rem;
     border-left: 2px solid var(--main-color);
     border-bottom: 2px solid var(--main-color);
     display: none;
   }
+  .navbar.active{
+    display: block;
+  }
   .navbar a{
     display: block;
     font-size: 2rem;
     margin: 3rem 0;
-    color: var(--text-color);
-  }
-  .navbar.active{
-    display: block;
-  }
-  .gradient-btn{
-    display: none;
+    color: white;
   }
   .inicio{
     flex-direction: column-reverse;
-    margin: 5rem 0;
-    gap: 5rem;
+    margin: 5rem 4rem;
   }
-  .inicio-content{
-    align-items: center;
-    text-align: center;
+  .inicio-content h3{
+    font-size: 2.6rem;
+  }
+  .inicio-content h1{
+    font-size: 8rem;
+    margin-top: 3rem;
+  }
+  .inicio-content p{
+    max-width: 600px;
+    margin: 0 auto;
   }
   .inicio-img img{
     width: 56vw;
-  }
-  .sobre{
-    flex-direction: column-reverse;
-    text-align: center;
-  }
-  .sobre h2{
-    text-align: center;
-    margin: 2rem 0;
-  }
-  .sobre img{
-    width: 52vw;
-  }
-  .contato form{
-    flex-direction: column;
   }
 }
