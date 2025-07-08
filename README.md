@@ -1,4 +1,4 @@
-# Portfólio Pessoal - Gabriel Santos
+# Portfólio Pessoal - Gabriel Chaves
 
 Este é o meu portfólio pessoal, desenvolvido com foco em HTML, CSS e JavaScript. O site apresenta uma navegação suave, responsiva e moderna, com efeitos de rolagem utilizando a biblioteca ScrollReveal.js. O objetivo é apresentar minhas habilidades, projetos e trajetória como desenvolvedor em formação.
 
@@ -22,13 +22,3 @@ Este é o meu portfólio pessoal, desenvolvido com foco em HTML, CSS e JavaScrip
 - ScrollReveal.js
 
 ---
-
-## 📁 Estrutura do Projeto
-
-📁 meu-portfolio/
-├── index.html
-├── style.css
-├── script.js
-├── README.md
-└── assets/
-└── imagens, ícones, etc.
