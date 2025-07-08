@@ -30,6 +30,18 @@ menuIcon.onclick = () => {
   navbar.classList.toggle('active');
 };
 
+/*======== • Fecha o menu se clicar fora do ícone ou da navbar ======*/
+document.addEventListener('click', function (e) {
+  const target = e.target;
+  const isClickInsideMenu = navbar.contains(target);
+  const isClickOnMenuIcon = menuIcon.contains(target);
+
+  if (!isClickInsideMenu && !isClickOnMenuIcon) {
+    navbar.classList.remove('active');
+    menuIcon.classList.remove('bx-x');
+  }
+});
+
 /*======== • ScrollReveal com ajuste para mobile ====== */
 if (window.innerWidth <= 768) {
   ScrollReveal({
