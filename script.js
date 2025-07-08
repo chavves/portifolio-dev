@@ -52,15 +52,18 @@ ScrollReveal().reveal('.inicio-content, .heading, .sobre-img, .projetos-box', { 
 ScrollReveal().reveal('.inicio-img, .portifolio-box, .contato form, .timeline-content', { origin: 'bottom' });
 ScrollReveal().reveal('.sobre-content, .inicio-img', { origin: 'left' });
 
+
+/*======== • Mostrar seta ao rolar a página (voltar ao topo) ======*/
 const scrollTopBtn = document.querySelector('.footer-iconTop');
 
 window.addEventListener('scroll', () => {
   if (window.scrollY > 300) {
-    scrollTopBtn.classList.add('show');
+    scrollTopBtn.classList.add('show'); // Exibe a seta ao descer a página
   } else {
-    scrollTopBtn.classList.remove('show');
+    scrollTopBtn.classList.remove('show'); // Esconde a seta ao voltar para o topo
   }
 });
+
 
 
 
