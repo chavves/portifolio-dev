@@ -15,31 +15,25 @@ let navLinks = document.querySelectorAll('header nav a');
 
 
 /*======== • Link ativo da seção de rolagem ====== */
-window.onscroll = () => {
-    sections.forEach(sec => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop - 150;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');
+function activeMenu() {
+  let top = window.scrollY;
 
-        if (top >= offset && top < offset + height) {
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-            });
+  sections.forEach(sec => {
+    let offset = sec.offsetTop - 150;
+    let height = sec.offsetHeight;
+    let id = sec.getAttribute('id');
 
-            // CORRIGIDO: uso de crase e interpolação
-            let activeLink = document.querySelector(`header nav a[href*="${id}"]`);
-            if (activeLink) {
-                activeLink.classList.add('active');
-            }
-        }
-    });
+    if (top >= offset && top < offset + height) {
+      navLinks.forEach(link => link.classList.remove('active'));
 
-    /*======== • Barra de navegação fixa ====== */
-    let header = document.querySelector('header');
+      let activeLink = document.querySelector(`header nav a[href*="${id}"]`);
+      if (activeLink) activeLink.classList.add('active');
+    }
+  });
+}
 
-    header.classList.toggle('sticky', window.scrollY > 100);
-};
+window.addEventListener('scroll', activeMenu);
+window.addEventListener('load', activeMenu);
 
 /*======== • scroll reveal ====== */
 ScrollReveal({
